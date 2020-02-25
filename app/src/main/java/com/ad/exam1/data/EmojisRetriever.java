@@ -59,6 +59,7 @@ public class EmojisRetriever {
        // String json = gson.toJson(jsonString);
        Type listType = new TypeToken<List<Emoji>>(){}.getType();
         List<Emoji> emojis = gson.fromJson(jsonString, listType);
+
        // Emoji maho = gson.fromJson(jsonString, Emoji.class);
 
 
@@ -66,6 +67,8 @@ public class EmojisRetriever {
 
        return emojis;
     }
+
+
 
     private String getJsonString(Context context){
         InputStream is = context.getResources().openRawResource(R.raw.emojis);
