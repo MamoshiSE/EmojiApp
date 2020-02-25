@@ -25,7 +25,7 @@ public class EmojiActivity extends AppCompatActivity {
     //private List<String> things = new ArrayList<>(Arrays.asList("hey", "test"));
     private ListView listView;
     private List<Emoji> emojis;
-    private Uri imageURL;
+    private String imgURL;
 
 
 
@@ -35,29 +35,23 @@ public class EmojiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_emoji);
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
-        String imgURL = intent.getStringExtra("image");
+
 
         emojis = EmojisRetriever.getInstance().getEmojiList(getApplicationContext());
-
-
+        bindViews();
+        addNewEmoji();
 
         if (name !=null) {
+            String imgURL = "file:"+intent.getStringExtra("image");
 
-            Emoji newEmoji = new Emoji(name,"url");
-            imageURL = Uri.parse(imgURL);
+            Emoji newEmoji = new Emoji(name,imgURL);
             emojis.add(0,newEmoji);
-            bindViews();
             listView.setAdapter((ArrayAdapter)getAdapter());
 
-            addNewEmoji();
-
-            Toast toast = Toast.makeText(this, imgURL, Toast.LENGTH_LONG);
-            toast.show();
         } else {
-            bindViews();
+
             listView.setAdapter((ArrayAdapter)getAdapter());
 
-            addNewEmoji();
         }
 
 

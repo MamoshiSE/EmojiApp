@@ -29,20 +29,22 @@
             android:layout_marginStart="48dp"
             android:layout_marginTop="36dp"
             android:onClick="onClickTakePhoto"
-            android:text="TAKE PHOTO"
+            android:text="@string/takePhoto"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emojiName" />
+            app:layout_constraintTop_toBottomOf="@+id/emojiName"
+            tools:text="@string/takePhoto" />
 
         <Button
-            android:id="@+id/SAVE"
+            android:id="@+id/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:layout_marginEnd="48dp"
             android:onClick="onClickSavePhoto"
-            android:text="SAVE"
+            android:text="@string/save"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emojiName" />
+            app:layout_constraintTop_toBottomOf="@+id/emojiName"
+            tools:text="@string/save" />
 
         <ImageView
             android:id="@+id/emojiPicture"
